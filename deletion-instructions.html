@@ -1,6 +1,190 @@
-<h2>User Data Deletion</h2>
-<p>
-  You can delete your account and associated user data directly in the Setora app.
-  To do this, navigate to the Profile tab, tap the Settings icon in the top right
-  corner, select Account, and then tap Delete Account.
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Deletion – Setora</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #43E0D3;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .page-label {
+      font-size: 13px;
+      color: #43E0D3;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 0 0 16px;
+    }
+
+    p {
+      color: #c0c0c0;
+      font-size: 15px;
+    }
+
+    a {
+      color: #43E0D3;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .card {
+      background: #111111;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 28px 28px;
+      margin-top: 32px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      color: #43E0D3;
+      margin: 0 0 12px;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #c0c0c0;
+      font-size: 15px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #0f2e2c;
+      border: 1px solid #43E0D3;
+      color: #43E0D3;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #1a1a1a;
+      color: #555;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: #555; }
+    .footer-links a:hover { color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Setora</a>
+    <div class="nav-links">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-label">Account</div>
+    <h1>User Data Deletion</h1>
+    <p>You can delete your account and all associated data directly within the Setora app. Follow the steps below.</p>
+
+    <div class="card">
+      <h2>Steps to Delete Your Account</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          Open the Setora app and go to the <strong>Profile</strong> tab.
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          Tap the <strong>Settings</strong> icon in the top right corner.
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          Select <strong>Account</strong>.
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          Tap <strong>Delete Account</strong> and confirm.
+        </li>
+      </ol>
+    </div>
+
+    <p style="margin-top: 32px;">
+      If you need additional help, contact us at
+      <a href="mailto:patrick.mihalcea@gmail.com">patrick.mihalcea@gmail.com</a>.
+    </p>
+
+    <footer>
+      <span>&copy; 2026 Setora. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
