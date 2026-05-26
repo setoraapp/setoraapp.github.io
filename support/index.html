@@ -3,117 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setora Support</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #050505;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    .logo {
-      font-size: 40px;
-      font-weight: 700;
-      color: #43E0D3;
-      margin-bottom: 16px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin: 0 0 16px;
-    }
-
-    h2 {
-      margin-top: 40px;
-      color: #43E0D3;
-    }
-
-    p {
-      color: #d6d6d6;
-      font-size: 16px;
-    }
-
-    a {
-      color: #43E0D3;
-      text-decoration: none;
-    }
-
-    .card {
-      background: #111111;
-      border: 1px solid #2a2a2a;
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 24px;
-    }
-
-    ul {
-      padding-left: 20px;
-      color: #d6d6d6;
-    }
-
-    footer {
-      margin-top: 56px;
-      color: #777;
-      font-size: 14px;
-    }
-  </style>
+  <title>Support | Setora</title>
+  <meta
+    name="description"
+    content="Contact Setora support for account help, subscription questions, bug reports, and workout data assistance."
+  />
+  <meta name="theme-color" content="#050816" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../pages.css" />
 </head>
 <body>
-  <main class="container">
-    <a class="logo" href="../">Setora</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Secondary">
+      <a class="brand" href="../">
+        <img class="brand-mark" src="../assets/Setora.png" alt="Setora logo" width="42" height="42" />
+        <span>Setora</span>
+      </a>
+      <div class="nav-links">
+        <a href="../">Home</a>
+        <a href="../support/" aria-current="page">Support</a>
+        <a href="../privacy/">Privacy</a>
+        <a href="../deletion-instructions/">Data Deletion</a>
+      </div>
+    </nav>
+  </header>
 
-    <h1>Support</h1>
-    <p>
-      Need help with Setora? Use the information below to contact support or
-      resolve common issues.
-    </p>
+  <main class="page-shell">
+    <div class="container">
+      <section class="page-hero">
+        <div class="eyebrow">Support</div>
+        <h1>Help for accounts, subscriptions, and training data.</h1>
+        <p>
+          If you need assistance with Setora, this is the fastest place to find
+          contact details, common support topics, and account deletion guidance.
+        </p>
+      </section>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <p>
-        For support, account questions, subscription issues, or data requests,
-        contact:
-      </p>
-      <p>
-        <a href="mailto:patrick.mihalcea@gmail.com">patrick.mihalcea@gmail.com</a>
-      </p>
-      <p>We aim to respond within 48 hours.</p>
+      <section class="support-grid">
+        <article class="highlight-card">
+          <strong>Contact support</strong>
+          <p>
+            For account access, subscription questions, bug reports, feature
+            requests, or data issues, email
+            <a href="mailto:patrick.mihalcea@gmail.com">patrick.mihalcea@gmail.com</a>.
+          </p>
+        </article>
+        <article class="highlight-card">
+          <strong>Response time</strong>
+          <p>
+            Support requests are typically answered within 48 hours.
+          </p>
+        </article>
+        <article class="highlight-card">
+          <strong>Best results</strong>
+          <p>
+            Include the email tied to your account and a short description of
+            the issue so we can help more quickly.
+          </p>
+        </article>
+      </section>
+
+      <section class="content-layout section-gap">
+        <div class="section-stack">
+          <article class="content-card">
+            <h2>Common support topics</h2>
+            <ul class="topic-list">
+              <li>Account access and sign-in issues</li>
+              <li>Subscription or billing questions</li>
+              <li>Workout or routine data concerns</li>
+              <li>Bug reports and app performance issues</li>
+              <li>Feature requests and product feedback</li>
+              <li>Account and data deletion requests</li>
+            </ul>
+          </article>
+
+          <article class="content-card">
+            <h2>Deleting your account</h2>
+            <p>
+              You can delete your Setora account and associated user data
+              directly inside the app.
+            </p>
+            <p>
+              Open the <strong>Profile</strong> tab, tap the
+              <strong>Settings</strong> icon in the top right, choose
+              <strong>Account</strong>, and then select
+              <strong>Delete Account</strong>.
+            </p>
+            <p>
+              Full deletion steps are also available on the
+              <a href="../deletion-instructions/">Data Deletion</a> page.
+            </p>
+          </article>
+        </div>
+
+        <aside class="section-stack">
+          <article class="meta-card">
+            <strong>Need to reference your policy?</strong>
+            <p>
+              Review how account and workout data are handled in the
+              <a href="../privacy/">Privacy Policy</a>.
+            </p>
+          </article>
+          <article class="meta-card">
+            <strong>Product scope</strong>
+            <p>
+              Setora is built to support workout tracking, routine planning,
+              analytics, progression, and body metric tracking in one system.
+            </p>
+          </article>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2026 Setora. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../privacy/">Privacy Policy</a>
+          <a href="../deletion-instructions/">Data Deletion</a>
+        </div>
+      </footer>
     </div>
-
-    <div class="card">
-      <h2>Common Support Topics</h2>
-      <ul>
-        <li>Account access</li>
-        <li>Subscription or billing questions</li>
-        <li>Workout data issues</li>
-        <li>Bug reports</li>
-        <li>Feature requests</li>
-        <li>Account deletion requests</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Account Deletion</h2>
-      <p>
-        You can delete your account and associated user data directly in the
-        Setora app. Navigate to the Profile tab, tap the Settings icon in the
-        top right corner, select Account, and then tap Delete Account.
-      </p>
-    </div>
-
-    <footer>
-      <p>&copy; 2026 Setora. All rights reserved.</p>
-    </footer>
   </main>
 </body>
 </html>
