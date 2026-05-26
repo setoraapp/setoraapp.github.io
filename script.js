@@ -7,7 +7,7 @@
   const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
   const revealItems = Array.from(document.querySelectorAll(".reveal"));
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const video = document.querySelector("[data-video-src]");
+  const videos = Array.from(document.querySelectorAll("[data-video-src]"));
 
   const setMenuState = (open) => {
     if (!navToggle || !navMenu) {
@@ -63,8 +63,8 @@
     revealItems.forEach((item) => revealObserver.observe(item));
   }
 
-  if (video) {
-    const startVideo = () => {
+  if (videos.length > 0) {
+    const startVideo = (video) => {
       const source = video.dataset.videoSrc;
       if (!source || video.dataset.loaded === "true") {
         return;
@@ -88,7 +88,7 @@
     };
 
     if (reducedMotion.matches) {
-      startVideo();
+      videos.forEach((video) => startVideo(video));
     } else {
       const videoObserver = new IntersectionObserver(
         (entries, observer) => {
@@ -97,7 +97,7 @@
               return;
             }
 
-            startVideo();
+            startVideo(entry.target);
             observer.unobserve(entry.target);
           });
         },
@@ -106,7 +106,7 @@
         }
       );
 
-      videoObserver.observe(video);
+      videos.forEach((video) => videoObserver.observe(video));
     }
   }
 

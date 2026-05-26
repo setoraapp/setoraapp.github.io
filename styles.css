@@ -307,7 +307,7 @@ button {
 
 .hero {
   padding-top: clamp(4rem, 9vw, 7rem);
-  padding-bottom: 4rem;
+  padding-bottom: clamp(5.5rem, 8vw, 7rem);
 }
 
 .hero-grid {
@@ -585,8 +585,33 @@ button {
   gap: 1.25rem;
 }
 
+.video-panel {
+  max-width: 28rem;
+  margin: 1.75rem auto 0;
+  text-align: center;
+}
+
+.video-copy h3 {
+  margin: 0 0 0.6rem;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.video-copy p {
+  margin: 0 0 1.4rem;
+  color: var(--text-soft);
+  font-size: 1.04rem;
+}
+
+.feature-extras {
+  margin-top: 1.75rem;
+}
+
 .demo-panel,
 .video-shell,
+.feature-extra-card,
 .final-cta-inner,
 .founder-copy {
   border-radius: var(--radius-xl);
@@ -616,8 +641,33 @@ button {
   gap: 1rem;
 }
 
-.device-frame.tall {
-  min-height: 28rem;
+.demo-phone-cluster {
+  position: relative;
+  width: min(100%, 22rem);
+  min-height: 30rem;
+  margin: 0 auto;
+}
+
+.demo-primary-device,
+.demo-secondary-device {
+  position: absolute;
+  margin: 0;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.34));
+}
+
+.demo-primary-device {
+  top: 2rem;
+  left: 0;
+  width: min(100%, 14rem);
+  transform: rotate(-9deg);
+}
+
+.demo-secondary-device {
+  top: 5.4rem;
+  left: 8.3rem;
+  width: min(100%, 14.75rem);
+  z-index: 2;
+  transform: rotate(8deg);
 }
 
 .demo-side-stack {
@@ -656,6 +706,64 @@ button {
   background: transparent;
 }
 
+.video-device {
+  position: relative;
+  width: min(100%, 24rem);
+  margin: 0 auto;
+  aspect-ratio: 387 / 795;
+}
+
+.video-device-screen {
+  position: absolute;
+  inset: 1.9% 4.15% 1.9%;
+  overflow: hidden;
+  border-radius: 2.7rem;
+  background: #05070d;
+}
+
+.video-device-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.video-device .product-video {
+  min-height: 100%;
+  height: 100%;
+  object-position: center top;
+}
+
+.video-device-frame {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.feature-extra-card {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.4rem;
+  border: 1px solid rgba(67, 224, 211, 0.16);
+  background:
+    radial-gradient(circle at top right, rgba(67, 224, 211, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+    rgba(9, 13, 27, 0.82);
+  box-shadow: var(--shadow-card);
+}
+
+.feature-extra-copy {
+  max-width: 28rem;
+}
+
+.feature-extra-device {
+  width: min(100%, 15rem);
+  margin: 0 auto;
+}
+
 .steps-grid {
   counter-reset: steps;
 }
@@ -685,6 +793,11 @@ button {
   position: relative;
   display: grid;
   gap: 1rem;
+}
+
+.routine-media-stack {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .analytics-visual {
@@ -757,6 +870,16 @@ button {
   display: block;
   font-size: 1.02rem;
   line-height: 1.35;
+}
+
+.history-review-block {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.history-review-video {
+  width: min(100%, 20rem);
 }
 
 .visual-card {
@@ -937,8 +1060,14 @@ button {
   }
 
   .demo-screen-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
-    align-items: stretch;
+    grid-template-columns: minmax(20rem, 24rem) minmax(18rem, 0.9fr);
+    align-items: start;
+    justify-content: center;
+  }
+
+  .feature-extra-card {
+    grid-template-columns: minmax(0, 1.1fr) minmax(14rem, 0.9fr);
+    align-items: center;
   }
 
   .deep-dive-grid,
@@ -1007,13 +1136,23 @@ button {
     grid-column: span 3;
   }
 
-  .demo-layout {
-    grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
-    align-items: start;
-  }
-
   .steps-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .demo-phone-cluster {
+    width: min(100%, 24rem);
+    min-height: 32rem;
+  }
+
+  .demo-primary-device {
+    width: min(100%, 14.5rem);
+  }
+
+  .demo-secondary-device {
+    top: 5.8rem;
+    left: 9rem;
+    width: min(100%, 15.25rem);
   }
 
   .visual-card-floating {
@@ -1058,6 +1197,22 @@ button {
 
   .device-stack {
     min-height: 24rem;
+  }
+
+  .demo-phone-cluster {
+    width: min(100%, 18rem);
+    min-height: 24rem;
+  }
+
+  .demo-primary-device {
+    top: 1rem;
+    width: min(48vw, 11rem);
+  }
+
+  .demo-secondary-device {
+    top: 4.6rem;
+    left: 6.5rem;
+    width: min(52vw, 11.5rem);
   }
 
   .analytics-stack {
