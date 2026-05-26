@@ -3,160 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Setora</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #050505;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .nav-logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #43E0D3;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      color: #aaa;
-      text-decoration: none;
-    }
-    .nav-links a:hover { color: #fff; }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    .page-label {
-      font-size: 13px;
-      color: #43E0D3;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin: 0 0 8px;
-    }
-
-    .updated {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      font-size: 18px;
-      color: #43E0D3;
-      margin-top: 40px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      color: #c0c0c0;
-      font-size: 15px;
-      margin: 0 0 16px;
-    }
-
-    a {
-      color: #43E0D3;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-
-    footer {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid #1a1a1a;
-      color: #555;
-      font-size: 13px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-links { display: flex; gap: 16px; }
-    .footer-links a { color: #555; }
-    .footer-links a:hover { color: #fff; text-decoration: none; }
-  </style>
+  <title>Privacy Policy | Setora</title>
+  <meta
+    name="description"
+    content="Read the Setora Privacy Policy, including what information is collected, how it is used, and how to request data deletion."
+  />
+  <meta name="theme-color" content="#050816" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../pages.css" />
 </head>
 <body>
-
-  <nav>
-    <a class="nav-logo" href="../">Setora</a>
-    <div class="nav-links">
-      <a href="../support/">Support</a>
-      <a href="../privacy/">Privacy</a>
-    </div>
-  </nav>
-
-  <main class="container">
-    <div class="page-label">Legal</div>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 28, 2026</p>
-
-    <p>Setora is a workout tracking app that helps users manage routines, log workouts, and track fitness progress.</p>
-
-    <h2>Information We Collect</h2>
-    <p>We may collect your email address, login email from Google or Facebook, height, weight, birthday, uploaded photos, workout data, goals, progress metrics, and other information you choose to enter into the app.</p>
-
-    <h2>How We Use Your Information</h2>
-    <p>We use this information to create and manage your account, save your workout history, track progress, personalize your experience, provide app features, maintain security, and respond to support requests.</p>
-
-    <h2>Authentication</h2>
-    <p>If you sign in using Google or Facebook, we may receive basic account information such as your email address and account identifier for authentication purposes.</p>
-
-    <h2>Data Storage</h2>
-    <p>Setora uses Supabase for backend services and Cloudflare R2 for file storage, including uploaded images or media. Your data may be processed and stored by these service providers as needed to operate the app.</p>
-
-    <h2>Data Sharing</h2>
-    <p>We do not sell your personal information. We may share limited information with service providers only as necessary to operate, secure, and maintain Setora.</p>
-
-    <h2>Data Retention and Deletion</h2>
-    <p>We retain your information while your account is active or as needed to provide the app. You may request account deletion or deletion of your personal data by contacting us at the email below.</p>
-
-    <h2>Children's Privacy</h2>
-    <p>Setora is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
-
-    <h2>Security</h2>
-    <p>We use reasonable technical and organizational measures to protect your information. However, no method of transmission or storage is completely secure.</p>
-
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised "Last updated" date.</p>
-
-    <h2>Contact</h2>
-    <p>If you have questions or requests about this Privacy Policy, contact us at <a href="mailto:patrick.mihalcea@gmail.com">patrick.mihalcea@gmail.com</a>.</p>
-
-    <footer>
-      <span>&copy; 2026 Setora. All rights reserved.</span>
-      <div class="footer-links">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Secondary">
+      <a class="brand" href="../">
+        <img class="brand-mark" src="../assets/Setora.png" alt="Setora logo" width="42" height="42" />
+        <span>Setora</span>
+      </a>
+      <div class="nav-links">
+        <a href="../">Home</a>
         <a href="../support/">Support</a>
+        <a href="../privacy/" aria-current="page">Privacy</a>
         <a href="../deletion-instructions/">Data Deletion</a>
       </div>
-    </footer>
-  </main>
+    </nav>
+  </header>
 
+  <main class="page-shell">
+    <div class="container">
+      <section class="page-hero">
+        <div class="eyebrow">Privacy</div>
+        <h1>Privacy Policy</h1>
+        <p>
+          This page explains what information Setora may collect, how it is
+          used to operate the app, and how to contact us about privacy or data
+          deletion requests.
+        </p>
+        <div class="updated">Last updated: April 28, 2026</div>
+      </section>
+
+      <section class="meta-grid">
+        <article class="meta-card">
+          <strong>What Setora is</strong>
+          <p>
+            Setora is a workout tracking app for routines, workout history,
+            analytics, progression, and body metrics.
+          </p>
+        </article>
+        <article class="meta-card">
+          <strong>How to contact us</strong>
+          <p>
+            Email
+            <a href="mailto:patrick.mihalcea@gmail.com">patrick.mihalcea@gmail.com</a>
+            for privacy or data requests.
+          </p>
+        </article>
+        <article class="meta-card">
+          <strong>Deletion requests</strong>
+          <p>
+            Account deletion can be initiated inside the app or reviewed on the
+            <a href="../deletion-instructions/">Data Deletion</a> page.
+          </p>
+        </article>
+      </section>
+
+      <section class="content-layout section-gap">
+        <div class="section-stack">
+          <article class="content-card">
+            <h2>Information We Collect</h2>
+            <p>
+              We may collect your email address, login email from Google or
+              Facebook, height, weight, birthday, uploaded photos, workout
+              data, goals, progress metrics, and any other information you
+              choose to enter into the app.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>How We Use Your Information</h2>
+            <p>
+              We use this information to create and manage your account, store
+              workout history, track progress, personalize your experience,
+              provide app functionality, maintain security, and respond to
+              support requests.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Authentication</h2>
+            <p>
+              If you sign in using Google or Facebook, we may receive basic
+              account information such as your email address and account
+              identifier for authentication purposes.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Data Storage</h2>
+            <p>
+              Setora uses Supabase for backend services and Cloudflare R2 for
+              file storage, including uploaded images or media. Your data may be
+              processed and stored by these service providers as needed to
+              operate the app.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Data Sharing</h2>
+            <p>
+              We do not sell your personal information. We may share limited
+              information with service providers only as necessary to operate,
+              secure, and maintain Setora.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Data Retention and Deletion</h2>
+            <p>
+              We retain your information while your account is active or as
+              needed to provide the app. You may request account deletion or
+              deletion of your personal data by contacting us at the email
+              listed on this page.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Children's Privacy</h2>
+            <p>
+              Setora is not intended for children under 13. We do not knowingly
+              collect personal information from children under 13.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Security</h2>
+            <p>
+              We use reasonable technical and organizational measures to help
+              protect your information. No method of transmission or storage is
+              completely secure.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h2>Changes to This Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time. Any updates
+              will be posted on this page with a revised “Last updated” date.
+            </p>
+          </article>
+        </div>
+
+        <aside class="section-stack">
+          <article class="meta-card">
+            <strong>Questions or requests</strong>
+            <p>
+              Contact
+              <a href="mailto:patrick.mihalcea@gmail.com">patrick.mihalcea@gmail.com</a>
+              if you have privacy questions or need help with deletion.
+            </p>
+          </article>
+          <article class="meta-card">
+            <strong>Related pages</strong>
+            <p>
+              Visit <a href="../support/">Support</a> for general help or
+              <a href="../deletion-instructions/">Data Deletion</a> for the
+              in-app deletion steps.
+            </p>
+          </article>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2026 Setora. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../support/">Support</a>
+          <a href="../deletion-instructions/">Data Deletion</a>
+        </div>
+      </footer>
+    </div>
+  </main>
 </body>
 </html>

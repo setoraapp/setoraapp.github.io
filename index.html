@@ -3,227 +3,526 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setora – Workout Tracker</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #050505;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #43E0D3;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-
-    /* ── Nav ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      border-bottom: 1px solid #1a1a1a;
-      position: sticky;
-      top: 0;
-      background: #050505cc;
-      backdrop-filter: blur(8px);
-      z-index: 10;
-    }
-
-    .nav-logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #43E0D3;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    .nav-links a { color: #aaa; }
-    .nav-links a:hover { color: #fff; text-decoration: none; }
-
-    /* ── Hero ── */
-    .hero {
-      text-align: center;
-      padding: 100px 24px 80px;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: #0f2e2c;
-      border: 1px solid #43E0D3;
-      color: #43E0D3;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 4px 14px;
-      border-radius: 999px;
-      margin-bottom: 28px;
-      letter-spacing: 0.5px;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 7vw, 64px);
-      font-weight: 700;
-      margin: 0 0 20px;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-    }
-
-    .hero h1 span { color: #43E0D3; }
-
-    .hero p {
-      font-size: 18px;
-      color: #aaa;
-      max-width: 520px;
-      margin: 0 auto 40px;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: #43E0D3;
-      color: #050505;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 14px 32px;
-      border-radius: 12px;
-      transition: opacity 0.15s;
-    }
-    .btn-primary:hover { opacity: 0.85; text-decoration: none; }
-
-    /* ── Features ── */
-    .features {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .feature-card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 20px;
-      padding: 32px 28px;
-    }
-
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-
-    .feature-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0 0 10px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #888;
-      margin: 0;
-    }
-
-    /* ── CTA strip ── */
-    .cta {
-      text-align: center;
-      padding: 80px 24px;
-      border-top: 1px solid #1a1a1a;
-    }
-
-    .cta h2 {
-      font-size: 32px;
-      font-weight: 700;
-      margin: 0 0 16px;
-    }
-
-    .cta p {
-      color: #888;
-      margin: 0 0 36px;
-    }
-
-    /* ── Footer ── */
-    footer {
-      padding: 40px 40px;
-      border-top: 1px solid #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 13px;
-      color: #555;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-    .footer-links a { color: #555; }
-    .footer-links a:hover { color: #fff; text-decoration: none; }
-  </style>
+  <title>Setora | Train with a system. Progress with proof.</title>
+  <meta
+    name="description"
+    content="Setora is the premium workout tracking and training-planning app for lifters who want structure, progression, analytics, and AI guidance in one polished system."
+  />
+  <meta name="theme-color" content="#050816" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Setora home">
+          <img
+            src="assets/Setora.png"
+            alt="Setora logo"
+            width="44"
+            height="44"
+          />
+          <span>Setora</span>
+        </a>
 
-  <nav>
-    <div class="nav-logo">Setora</div>
-    <div class="nav-links">
-      <a href="support/">Support</a>
-      <a href="privacy/">Privacy</a>
-    </div>
-  </nav>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
 
-  <section class="hero">
-    <div class="hero-badge">Workout Tracker</div>
-    <h1>Train smarter.<br /><span>Track everything.</span></h1>
-    <p>Setora helps you build routines, log workouts, and visualize your fitness progress — all in one place.</p>
-    <a href="https://apps.apple.com/ca/app/setora-workout-tracker/id6762304680" class="btn-primary">Download on the App Store</a>
-  </section>
+        <div class="nav-menu" id="nav-menu">
+          <div class="nav-links">
+            <a href="#why">Why Setora</a>
+            <a href="#features">Features</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#founder">Story</a>
+          </div>
+          <a
+            class="button button-small button-primary nav-cta"
+            href="https://apps.apple.com/ca/app/setora-workout-tracker/id6762304680"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download
+          </a>
+        </div>
+      </nav>
+    </header>
 
-  <section class="features">
-    <div class="feature-card">
-      <div class="feature-icon">🏋️</div>
-      <h3>Custom Routines</h3>
-      <p>Build personalized workout plans tailored to your goals, schedule, and fitness level.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>Progress Tracking</h3>
-      <p>Log every set, rep, and weight. See clear charts of your strength and body composition over time.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>Fast Logging</h3>
-      <p>Quickly record workouts mid-session without interrupting your flow. No friction, just results!</p>
-    </div>
-  </section>
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-bg hero-bg-left"></div>
+        <div class="hero-bg hero-bg-right"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">Premium training system for serious lifters</div>
+            <h1>Train with a system. Progress with proof.</h1>
+            <p class="hero-text">
+              Setora brings workout tracking, routine planning, body metrics,
+              advanced analytics, and AI-assisted coaching into one polished
+              mobile app built for people who want real structure and long-term
+              improvement.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="https://apps.apple.com/ca/app/setora-workout-tracker/id6762304680"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Download on the App Store
+              </a>
+              <a class="button button-secondary" href="#demo">
+                See the system
+              </a>
+            </div>
+            <ul class="hero-points" aria-label="Setora value highlights">
+              <li>Log sets, weight, reps, and RIR without losing focus mid-session.</li>
+              <li>Plan structured training days and adaptive routines in one place.</li>
+              <li>Use analytics and AI guidance to keep progression intentional.</li>
+            </ul>
+          </div>
 
-  <section class="cta">
-    <h2>Ready to level up?</h2>
-    <p>Join Setora and start making every workout count.</p>
-    <a href="https://apps.apple.com/ca/app/setora-workout-tracker/id6762304680" class="btn-primary">Get Setora Free</a>
-  </section>
+          <div class="hero-visual reveal reveal-delay">
+            <div class="hero-orbit hero-orbit-one"></div>
+            <div class="hero-orbit hero-orbit-two"></div>
+            <div class="hero-metrics">
+              <div class="metric-card metric-glow">
+                <span class="metric-label">Progression</span>
+                <strong>Structured overload</strong>
+                <p>Adjust weights, reps, and sets with confidence instead of guesswork.</p>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Insight</span>
+                <strong>Charts that explain your training</strong>
+                <p>See volume, PRs, streaks, frequency, and muscle-group trends at a glance.</p>
+              </div>
+            </div>
 
-  <footer>
-    <span>&copy; 2026 Setora. All rights reserved.</span>
-    <div class="footer-links">
-      <a href="privacy/">Privacy Policy</a>
-      <a href="support/">Support</a>
-      <a href="deletion-instructions/">Data Deletion</a>
-    </div>
-  </footer>
+            <div class="device-stack" aria-hidden="true">
+              <figure class="device-frame frame-back">
+                <img
+                  src="assets/Dashboard%20Dark.png"
+                  alt=""
+                  width="1017"
+                  height="2080"
+                  fetchpriority="high"
+                />
+              </figure>
+              <figure class="device-frame frame-front">
+                <img
+                  src="assets/Routine%20Details.png"
+                  alt=""
+                  width="1017"
+                  height="2080"
+                  fetchpriority="high"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="section value-band" id="why">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <div class="eyebrow">Why Setora</div>
+            <h2>Not another basic logbook.</h2>
+            <p>
+              Most fitness apps solve one part of training well. Setora connects
+              the full system so planning, logging, analysis, and progression
+              actually work together.
+            </p>
+          </div>
+
+          <div class="pillar-grid">
+            <article class="pillar reveal">
+              <span class="pillar-kicker">Plan</span>
+              <h3>Build training weeks with intent</h3>
+              <p>
+                Organize training days, exercise order, rep targets, and
+                custom movements into routines that feel built for your actual
+                schedule and goals.
+              </p>
+            </article>
+            <article class="pillar reveal">
+              <span class="pillar-kicker">Track</span>
+              <h3>Capture the details that matter</h3>
+              <p>
+                Log sets, weight, reps, and RIR with a flow that stays fast in
+                the middle of a workout instead of slowing it down.
+              </p>
+            </article>
+            <article class="pillar reveal">
+              <span class="pillar-kicker">Analyze</span>
+              <h3>See if your training is actually moving</h3>
+              <p>
+                Turn raw workout history into clear performance context with PR
+                tracking, progression charts, streaks, frequency, and volume.
+              </p>
+            </article>
+            <article class="pillar reveal">
+              <span class="pillar-kicker">Adapt</span>
+              <h3>Let the system help you progress</h3>
+              <p>
+                Use AI-guided routines and progressive overload support to make
+                better adjustments over time without losing the structure of
+                your plan.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section feature-showcase" id="features">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="eyebrow">Feature showcase</div>
+            <h2>Built to make improvement easier to execute.</h2>
+            <p>
+              Every major piece of the product is designed around better
+              training decisions, not more noise.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card-large reveal">
+              <div class="feature-copy">
+                <span class="feature-label">AI Routine Builder</span>
+                <h3>Start with a plan that fits your goals.</h3>
+                <p>
+                  Create personalized routines around your experience level,
+                  equipment, and training priorities so you can begin with
+                  something thoughtful instead of generic.
+                </p>
+              </div>
+              <ul class="feature-list">
+                <li>Goal-aware planning</li>
+                <li>Equipment-aware exercise choices</li>
+                <li>Structured training days and progression targets</li>
+              </ul>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-label">AI Progressive Overload</span>
+              <h3>Know what to push next.</h3>
+              <p>
+                Use performance history to guide smarter adjustments to weights,
+                reps, and sets as your training evolves.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-label">Advanced analytics</span>
+              <h3>Get clarity, not just stored data.</h3>
+              <p>
+                Review workout history, progression charts, PRs, volume,
+                frequency, streaks, and muscle-group trends in one place.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-label">Body tracking</span>
+              <h3>Measure more than your lifts.</h3>
+              <p>
+                Track body measurements and goals alongside your training so the
+                bigger picture stays visible.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section demo-section" id="demo">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <div class="eyebrow">Product demo</div>
+            <h2>A polished training experience from plan to performance review.</h2>
+            <p>
+              Real product visuals, clean workflow design, and the kind of
+              detail serious lifters actually rely on.
+            </p>
+          </div>
+
+          <div class="demo-layout">
+            <div class="demo-overview reveal">
+              <div class="demo-panel">
+                <div class="demo-panel-top">
+                  <span class="panel-tag">Live training flow</span>
+                  <span class="panel-note">Fast logging with structure</span>
+                </div>
+                <div class="demo-screen-grid">
+                  <figure class="device-frame tall">
+                    <img
+                      src="assets/Workout.png"
+                      alt="Setora workout logging screen showing sets, weight, reps, and RIR"
+                      width="1017"
+                      height="2080"
+                    />
+                  </figure>
+                  <div class="demo-side-stack">
+                    <article class="ui-card">
+                      <span class="ui-label">During the session</span>
+                      <h3>Everything you need stays visible.</h3>
+                      <p>
+                        Previous performance, target ranges, RIR, warmups, and
+                        completion state all sit in the same workflow.
+                      </p>
+                    </article>
+                    <article class="ui-card ui-card-accent">
+                      <span class="ui-label">Body and goals</span>
+                      <h3>Track the physical changes too.</h3>
+                      <p>
+                        Keep measurements and direction in the same system as
+                        your training history.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-panel reveal reveal-delay">
+              <div class="video-shell">
+                <div class="video-copy">
+                  <span class="feature-label">AI routine creation</span>
+                  <h3>See how fast a structured plan comes together.</h3>
+                  <p>
+                    Setora helps turn your goals and equipment into a usable
+                    routine without making the result feel canned.
+                  </p>
+                </div>
+                <video
+                  class="product-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  poster="assets/Routine%20Details%202.png"
+                  data-video-src="assets/AI%20Routine%20Creation.mp4"
+                  aria-label="Demo video of Setora's AI routine creation flow"
+                ></video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section how-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="eyebrow">How it works</div>
+            <h2>Three steps to train with more clarity.</h2>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card reveal">
+              <span class="step-number">01</span>
+              <h3>Build the plan</h3>
+              <p>
+                Start with your own routine or use AI to generate a structure
+                that matches your goals, experience, and available equipment.
+              </p>
+            </article>
+            <article class="step-card reveal">
+              <span class="step-number">02</span>
+              <h3>Train with precision</h3>
+              <p>
+                Log every set with weight, reps, and RIR while staying in the
+                flow of the workout.
+              </p>
+            </article>
+            <article class="step-card reveal">
+              <span class="step-number">03</span>
+              <h3>Review and progress</h3>
+              <p>
+                Use history, analytics, and overload guidance to decide what
+                needs to change next and keep moving forward.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section deep-dive" id="analytics">
+        <div class="container deep-dive-grid">
+          <div class="deep-copy reveal">
+            <div class="eyebrow">Analytics and progression</div>
+            <h2>Know whether your training is working.</h2>
+            <p>
+              Setora turns your history into practical insight: personal
+              records, training volume, session frequency, workout streaks, and
+              muscle-group trends that help you adjust with intent.
+            </p>
+            <ul class="check-list">
+              <li>Progression charts that show more than a single PR</li>
+              <li>Exercise-level history across weight, reps, and volume</li>
+              <li>Training frequency and consistency patterns worth acting on</li>
+              <li>Premium depth for users who want more analysis and longer programs</li>
+            </ul>
+          </div>
+
+          <div class="deep-visual analytics-visual reveal reveal-delay">
+            <div class="hero-orbit analytics-orbit-one"></div>
+            <div class="hero-orbit analytics-orbit-two"></div>
+            <div class="analytics-stack">
+              <figure class="device-frame analytics-phone analytics-phone-back">
+                <img
+                  src="assets/Dashboard%20Dark.png"
+                  alt="Setora dashboard showing advanced workout analytics and charts"
+                  width="1017"
+                  height="2080"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="device-frame analytics-phone analytics-phone-front">
+                <img
+                  class="analytics-full-image"
+                  src="assets/Exercise%20Details%202.png"
+                  alt="Setora exercise detail screen showing progression charts and personal records"
+                  width="941"
+                  height="2027"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+            <article class="analytics-note">
+              <span class="ui-label">Progress you can read</span>
+              <strong>Spot lift trends, session volume, and real momentum faster.</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section routines-section">
+        <div class="container deep-dive-grid reverse">
+          <div class="deep-visual reveal">
+            <div class="visual-card visual-card-wide">
+              <figure class="device-frame compact">
+                <img
+                  src="assets/Routine%20Details%202.png"
+                  alt="Setora routine details screen showing a structured training day"
+                  width="1017"
+                  height="2080"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+            <article class="floating-insight">
+              <span class="ui-label">Built for personalization</span>
+              <strong>Custom exercises, flexible splits, deeper premium planning.</strong>
+            </article>
+          </div>
+
+          <div class="deep-copy reveal reveal-delay">
+            <div class="eyebrow">Routines and personalization</div>
+            <h2>Structure your training around real life, not rigid templates.</h2>
+            <p>
+              Build weekly routines with training days, exercise sequencing,
+              custom movements, and the flexibility to make the program fit your
+              actual context.
+            </p>
+            <ul class="check-list">
+              <li>Create structured weeks with specific exercise targets</li>
+              <li>Use custom exercises when your training needs something unique</li>
+              <li>Personalize around goals, experience, and available equipment</li>
+              <li>Unlock more routines, deeper AI usage, analytics, and longer programs with premium</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section founder-section" id="founder">
+        <div class="container founder-grid">
+          <figure class="founder-portrait reveal">
+            <img
+              src="assets/headshot-cropped.png"
+              alt="Setora founder portrait"
+              width="567"
+              height="649"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="founder-copy reveal reveal-delay">
+            <div class="eyebrow">Founder story</div>
+            <h2>Built from a real training journey.</h2>
+            <p>
+              Setora started from the same frustration a lot of committed
+              lifters run into: most fitness apps do one thing well, but almost
+              none of them bring planning, execution, progression, and insight
+              into one system that feels serious to use.
+            </p>
+            <p>
+              The goal was to build something more complete and more thoughtful.
+              A product that helps people train with structure, understand what
+              is changing, and keep improving without bouncing between five
+              different tools.
+            </p>
+            <p>
+              That is the standard Setora is built around: clear design,
+              capable tracking, and training support that respects the user’s
+              intent to get better over time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" id="download">
+        <div class="container final-cta-inner reveal">
+          <div class="eyebrow">Ready when you are</div>
+          <h2>Train with more clarity. Progress with more confidence.</h2>
+          <p>
+            Start free, build a better system for your training, and unlock
+            premium depth when you want more analytics, more routines, longer
+            programs, and more AI support.
+          </p>
+          <div class="hero-actions centered-actions">
+            <a
+              class="button button-primary"
+              href="https://apps.apple.com/ca/app/setora-workout-tracker/id6762304680"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download on the App Store
+            </a>
+            <a class="button button-secondary" href="#features">Explore features</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <div class="footer-brand">
+          <img src="assets/Setora.png" alt="" width="36" height="36" />
+          <div>
+            <strong>Setora</strong>
+            <p>Premium workout tracking and training planning for serious improvement.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="support/">Support</a>
+          <a href="privacy/">Privacy Policy</a>
+          <a href="deletion-instructions/">Data Deletion</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
