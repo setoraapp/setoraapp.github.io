@@ -30,11 +30,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
@@ -496,6 +498,9 @@ button {
 .frame-front {
   position: absolute;
   width: min(62vw, 18rem);
+  transform-origin: center center;
+  transition: transform 820ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .frame-back {
@@ -508,6 +513,21 @@ button {
   right: 0;
   top: 5.5rem;
   transform: rotate(10deg);
+}
+
+.js .hero-visual .frame-back,
+.js .hero-visual .frame-front {
+  transform: rotate(0deg);
+}
+
+.js .hero-visual.is-visible .frame-back {
+  transform: rotate(-10deg);
+  transition-delay: 120ms;
+}
+
+.js .hero-visual.is-visible .frame-front {
+  transform: rotate(10deg);
+  transition-delay: 220ms;
 }
 
 .value-band {
@@ -591,6 +611,10 @@ button {
   text-align: center;
 }
 
+.ai-routine-panel {
+  max-width: 52rem;
+}
+
 .video-copy h3 {
   margin: 0 0 0.6rem;
   font-family: "Sora", sans-serif;
@@ -606,7 +630,7 @@ button {
 }
 
 .feature-extras {
-  margin-top: 1.75rem;
+  margin-top: 5.5rem;
 }
 
 .demo-panel,
@@ -646,41 +670,76 @@ button {
 
 .demo-screen-grid {
   display: grid;
-  gap: 1rem;
+  gap: 10rem;
 }
 
 .demo-phone-cluster {
   position: relative;
-  width: min(100%, 22rem);
-  min-height: 30rem;
+  width: min(100%, 25.5rem);
+  min-height: 34rem;
   margin: 0 auto;
 }
 
-.demo-primary-device,
-.demo-secondary-device {
+.demo-frame-device {
   position: absolute;
   margin: 0;
+  aspect-ratio: 387 / 795;
   filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.34));
+  transform-origin: center center;
+  transition: transform 820ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
-.demo-primary-device {
-  top: 2rem;
-  left: 0;
-  width: min(100%, 14rem);
-  transform: rotate(-9deg);
+.demo-left-device {
+  top: 4.75rem;
+  left: -2.2rem;
+  width: min(100%, 12.5rem);
+  transform: rotate(-10deg);
+  z-index: 1;
 }
 
-.demo-secondary-device {
-  top: 5.4rem;
-  left: 8.3rem;
-  width: min(100%, 14.75rem);
+.demo-center-device {
+  top: 0.75rem;
+  left: 50%;
+  width: min(100%, 15.75rem);
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.demo-right-device {
+  top: 4.75rem;
+  right: -2.2rem;
+  width: min(100%, 12.5rem);
+  transform: rotate(10deg);
   z-index: 2;
-  transform: rotate(8deg);
+}
+
+.js .demo-overview .demo-left-device,
+.js .demo-overview .demo-right-device {
+  transform: rotate(0deg);
+}
+
+.js .demo-overview.is-visible .demo-left-device {
+  transform: rotate(-10deg);
+  transition-delay: 120ms;
+}
+
+.js .demo-overview.is-visible .demo-right-device {
+  transform: rotate(10deg);
+  transition-delay: 220ms;
+}
+
+.demo-center-video .product-video {
+  min-height: 100%;
+  height: 100%;
+  object-position: center top;
 }
 
 .demo-side-stack {
   display: grid;
   gap: 1rem;
+  width: min(100%, 21rem);
+  justify-self: end;
 }
 
 .ui-card {
@@ -721,11 +780,15 @@ button {
   aspect-ratio: 387 / 795;
 }
 
+.ai-routine-device {
+  width: min(100%, 20.5rem);
+}
+
 .video-device-screen {
   position: absolute;
-  inset: 1.9% 4.15% 1.9%;
+  inset: 1.5% 4.15% 2%;
   overflow: hidden;
-  border-radius: 2.7rem;
+  border-radius: 0.9rem;
   background: #05070d;
 }
 
@@ -821,6 +884,9 @@ button {
 .analytics-phone {
   position: absolute;
   width: min(60vw, 18.5rem);
+  transform-origin: center center;
+  transition: transform 820ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .analytics-phone-back {
@@ -834,6 +900,20 @@ button {
   top: 4.8rem;
   z-index: 1;
   transform: rotate(9deg);
+}
+
+.js .analytics-visual .analytics-phone {
+  transform: rotate(0deg);
+}
+
+.js .analytics-visual.is-visible .analytics-phone-back {
+  transform: rotate(-9deg);
+  transition-delay: 120ms;
+}
+
+.js .analytics-visual.is-visible .analytics-phone-front {
+  transform: rotate(9deg);
+  transition-delay: 220ms;
 }
 
 .analytics-full-image {
@@ -900,6 +980,10 @@ button {
 
 .visual-card-wide {
   padding-bottom: 0;
+}
+
+.routines-visual-card {
+  max-width: 30rem;
 }
 
 .visual-card-floating {
@@ -1068,14 +1152,27 @@ button {
   }
 
   .demo-screen-grid {
-    grid-template-columns: minmax(20rem, 24rem) minmax(18rem, 0.9fr);
+    grid-template-columns: minmax(20rem, 25rem) minmax(16rem, 21rem);
     align-items: center;
     justify-content: center;
+    gap: 5.5rem;
+  }
+
+  .ai-routine-shell {
+    grid-template-columns: minmax(16rem, 20.5rem) minmax(18rem, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .ai-routine-copy {
+    text-align: left;
   }
 
   .feature-extra-card {
     grid-template-columns: minmax(0, 1.1fr) minmax(14rem, 0.9fr);
     align-items: center;
+    gap: 0.9rem;
   }
 
   .deep-dive-grid,
@@ -1149,18 +1246,22 @@ button {
   }
 
   .demo-phone-cluster {
-    width: min(100%, 24rem);
-    min-height: 32rem;
+    width: min(100%, 28rem);
+    min-height: 36rem;
   }
 
-  .demo-primary-device {
-    width: min(100%, 14.5rem);
+  .demo-left-device,
+  .demo-right-device {
+    width: min(100%, 13rem);
   }
 
-  .demo-secondary-device {
-    top: 5.8rem;
-    left: 9rem;
-    width: min(100%, 15.25rem);
+  .demo-center-device {
+    width: min(100%, 16.5rem);
+  }
+
+  .demo-right-device,
+  .demo-left-device {
+    top: 5.15rem;
   }
 
   .visual-card-floating {
@@ -1192,6 +1293,7 @@ button {
 
   .hero {
     padding-top: 3.2rem;
+    padding-bottom: 6.5rem;
   }
 
   .hero h1 {
@@ -1203,24 +1305,35 @@ button {
     width: min(66vw, 14.5rem);
   }
 
-  .device-stack {
-    min-height: 24rem;
-  }
 
   .demo-phone-cluster {
-    width: min(100%, 18rem);
-    min-height: 24rem;
+    width: min(100%, 19.5rem);
+    min-height: 30rem;
+    margin-bottom: 1.25rem;
   }
 
-  .demo-primary-device {
-    top: 1rem;
-    width: min(48vw, 11rem);
+  .demo-left-device,
+  .demo-right-device {
+    top: 4.35rem;
+    width: min(42vw, 20.3rem);
   }
 
-  .demo-secondary-device {
-    top: 4.6rem;
-    left: 6.5rem;
-    width: min(52vw, 11.5rem);
+  .demo-left-device {
+    left: -1.4rem;
+  }
+
+  .demo-right-device {
+    right: -1.4rem;
+  }
+
+  .demo-center-device {
+    top: 0.2rem;
+    width: min(68vw, 14.5rem);
+  }
+
+  .demo-side-stack {
+    width: 100%;
+    justify-self: stretch;
   }
 
   .analytics-stack {
