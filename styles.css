@@ -30,11 +30,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
@@ -591,6 +593,10 @@ button {
   text-align: center;
 }
 
+.ai-routine-panel {
+  max-width: 52rem;
+}
+
 .video-copy h3 {
   margin: 0 0 0.6rem;
   font-family: "Sora", sans-serif;
@@ -719,6 +725,10 @@ button {
   width: min(100%, 24rem);
   margin: 0 auto;
   aspect-ratio: 387 / 795;
+}
+
+.ai-routine-device {
+  width: min(100%, 20.5rem);
 }
 
 .video-device-screen {
@@ -1073,6 +1083,17 @@ button {
     justify-content: center;
   }
 
+  .ai-routine-shell {
+    grid-template-columns: minmax(16rem, 20.5rem) minmax(18rem, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .ai-routine-copy {
+    text-align: left;
+  }
+
   .feature-extra-card {
     grid-template-columns: minmax(0, 1.1fr) minmax(14rem, 0.9fr);
     align-items: center;
@@ -1192,6 +1213,7 @@ button {
 
   .hero {
     padding-top: 3.2rem;
+    padding-bottom: 6.5rem;
   }
 
   .hero h1 {
@@ -1203,9 +1225,6 @@ button {
     width: min(66vw, 14.5rem);
   }
 
-  .device-stack {
-    min-height: 24rem;
-  }
 
   .demo-phone-cluster {
     width: min(100%, 18rem);
