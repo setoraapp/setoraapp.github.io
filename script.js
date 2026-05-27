@@ -7,7 +7,9 @@
   const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
   const revealItems = Array.from(document.querySelectorAll(".reveal"));
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileViewport = window.matchMedia("(max-width: 719px)");
   const videos = Array.from(document.querySelectorAll("[data-video-src]"));
+  const directVideos = Array.from(document.querySelectorAll("video:not([data-video-src])"));
 
   const setMenuState = (open) => {
     if (!navToggle || !navMenu) {
@@ -87,8 +89,17 @@
       }
     };
 
+    const warmDirectVideo = (video) => {
+      video.preload = "metadata";
+      video.load();
+    };
+
     if (reducedMotion.matches) {
       videos.forEach((video) => startVideo(video));
+      directVideos.forEach((video) => warmDirectVideo(video));
+    } else if (mobileViewport.matches) {
+      videos.forEach((video) => startVideo(video));
+      directVideos.forEach((video) => warmDirectVideo(video));
     } else {
       const videoObserver = new IntersectionObserver(
         (entries, observer) => {
@@ -102,11 +113,13 @@
           });
         },
         {
-          threshold: 0.3,
+          threshold: 0.01,
+          rootMargin: "300px 0px",
         }
       );
 
       videos.forEach((video) => videoObserver.observe(video));
+      directVideos.forEach((video) => warmDirectVideo(video));
     }
   }
 
